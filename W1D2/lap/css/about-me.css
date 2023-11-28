@@ -15,11 +15,11 @@ body {
 
 a {
   text-decoration: none;
-  color: var(--quaternary-color);
+  color: var(--secondary-color);
   text-decoration: underline;
 }
 a:hover {
-  color: var(--secondary-color);
+  color: var(--quaternary-color);
   text-decoration: dashed underline;
 }
 
@@ -89,21 +89,66 @@ ol {
   display: flex;
   flex-direction: column;
 }
-#fav-movies ol li a {
+#fav-movies ol li > div{
+  width: 200px;
   display: flex;
   flex-direction: column;
-  text-align: center;
   gap: 10px;
 }
-#fav-movies ol li a img {
-  width: 200px;
-  height: 300px;
-  border-radius: 10px;
-  border: 5px solid var(--white-color);
-  transition: box-shadow 0.3s ease-in-out;
+#fav-movies ol li > div h4{
+  margin: 0;
+  padding: 0;
 }
-#fav-movies ol li a:hover img {
-  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+
+.info{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.movie-info {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.movie-info span {
+  font-weight: 700;
+  font-size: 16px;
+  display: inline-block;
+  color: var(--black-color);
+  border-right: 1px solid var(--black-color);
+  padding-right: 10px;
+}
+.movie-info span:last-child {
+  border-right: none;
+  padding-right: 0;
+}
+
+.category {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.category span {
+  font-weight: bold;
+  font-size: 14px;
+  background-color: var(--quaternary-color);
+  color: var(--black-color);
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 18px;
+}
+
+.director {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.director span {
+  font-weight: 500;
+  font-size: 13px;
 }
 
 #my-mood {
