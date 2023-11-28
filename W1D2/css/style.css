@@ -1,0 +1,72 @@
+h1 {
+  color: red;
+  font-family: Arial, "Courier New", serif;
+  font-size: 35px;
+  font-style: italic;
+}
+h2 {
+  color: rgb(128, 0, 196);
+}
+h3 {
+  color: rgba(128, 0, 196, 0.5);
+}
+h4 {
+  color: #ff8800;
+}
+h5 {
+  color: #f80;
+}
+h6 {
+  color: hsla(120, 60%, 70%, 0.3);
+}
+
+h1 {
+  /* which font will be used */
+  font-family: Georgia;
+}
+h2 {
+  /* enclose multi-word font names in quotes */
+  font-family: "Courier New";
+}
+h3 {
+  /* can specify multiple fonts from highest to
+    lowest priority */
+  font-family: Garamond, "Times New Roman", serif;
+}
+
+
+.no-marker {
+  list-style-type: none;
+}
+
+.circle {
+  list-style-type: circle;
+}
+
+.square {
+  list-style-type: square;
+}
+
+.disc {
+  list-style-type: disc;
+}
+
+.decimal {
+  list-style-type: revert;
+}
+
+.lower-alpha {
+  list-style-type: lower-alpha;
+}
+
+.upper-alpha {
+  list-style-type: upper-alpha;
+}
+
+.lower-roman {
+  list-style-type: lower-roman;
+}
+
+.upper-roman {
+  list-style-type: upper-roman;
+}

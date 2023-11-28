@@ -1,0 +1,29 @@
+div p {
+  color: red;
+}
+
+div > p {
+  color: blue;
+}
+
+aside {
+  color: gray;
+}
+p {
+  color: green;
+}
+em {
+  color: yellow;
+}
+.awesome {
+  color: blue;
+}
+em.awesome {
+  color: red;
+}
+#recent {
+  color: black;
+}
+em#recent.awesome {
+  color: orange;
+}

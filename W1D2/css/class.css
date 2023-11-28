@@ -1,0 +1,33 @@
+
+
+.main {
+  color: red;
+}
+
+#special {
+  color: blue;
+}
+
+p {
+  color: purple;
+}
+
+.special.shout {
+    /* only p elements with both classes */
+    color: white;
+    background-color: blue;
+    font-weight: bold;
+    font-family: cursive;
+  }
+
+.special {
+  /* any element with class="special" */
+  background-color: yellow;
+  font-weight: bold;
+}
+.shout {
+  /* only p elements with class="shout" */
+  color: red;
+  font-family: cursive;
+}
+
