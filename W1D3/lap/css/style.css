@@ -114,25 +114,25 @@ main > h1{
 .wrapper .left > span{
   text-align: center;
   position: relative;
-  color: #ddd;
+  color: #a7a7a7;
   font-size: 14px;
 }
 .wrapper .left > span::before{
   content: "";
-  width: 125px;
+  width: 170px;
   position: absolute;
   height: 2px;
   left: 0;
-  top: 10px;
+  top: 8px;
   background-color: var(--grey);
 }
 .wrapper .left > span::after{
   content: "";
-  width: 125px;
+  width: 170px;
   position: absolute;
   height: 2px;
   right: 0;
-  top: 10px;
+  top: 8px;
   background-color: var(--grey);
 }
 
