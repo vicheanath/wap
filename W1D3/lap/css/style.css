@@ -164,6 +164,7 @@ button{
   background-color: var(--white);
   cursor: pointer;
   outline: none;
+  font-size: 18px;
 }
 button img{
   height: 20px;
