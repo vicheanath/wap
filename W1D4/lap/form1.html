@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form 1 Lap</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <script src="../js/bootstrap.js"></script>
+</head>
+
+<body>
+
+    <main class="container">
+        <h1>Form 1 Lap</h1>
+        <form action="form1.html" method="get">
+            <div class="mb-3">
+                <label for="website-url" class="form-label">Website URL</label>
+                <input type="text" name="websiteUrl" class="form-control" id="website-url" placeholder="Website URL" pattern="https?://.+" required>
+            </div>
+            <div class="mb-3">
+                <label for="first-name" class="form-label">First Name</label>
+                <input type="text" name="firstName" class="form-control" id="first-name" placeholder="First Name" pattern="[A-Z][a-z]{2,}" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" name="email" class="form-control" id="email" placeholder="Enter email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" name="password" minlength="10" class="form-control" id="password" placeholder="Password" pattern=".{10,}" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </main>
+
+</body>
+
+</html>

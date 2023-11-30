@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/form.css">
+</head>
+
+<body>
+    <form action="form.html" method="get">
+
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" placeholder="Enter your name" required autofocus pattern="[a-z]+"
+            title="Alow only lowercase letters">
+        <label for="entry">Entry Month</label>
+        <input type="text" name="entry" id="entry" required pattern="1[0-2]|?[1-9]">
+        <label for="phone">Phone</label>
+        <input type="tel" name="phone" id="phone" required pattern="\d{3}[ \-]\d{3}[ \-]\d{4}"
+            placeholder="xxx-xxx-xxxx">
+        <input type="submit" value="Submit">
+
+    </form>
+</body>
+
+</html>

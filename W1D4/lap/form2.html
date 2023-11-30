@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form 2 Lap</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">MUM Golden Dome Market ::: SRM System</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
+                    aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarColor01">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item border-start border-light border-2 ml-2">
+                            <a class="nav-link" href="#">Product</a>
+                        </li>
+                        <li class="nav-item border-start border-light border-2">
+                            <a class="nav-link" href="#">Suppliers</a>
+                        </li>
+                    </ul>
+                    <div class="d-flex justify-content-center align-items-center gap-3">
+                        <div class="text-light">Hello!</div>
+                        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Sign Out</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="container">
+        <h2 class="text-dark font-weight-normal mt-5">New Product Form</h2>
+        <form action="form2.html" method="get" class="p-3">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="product-number" class="form-label">Product Number</label>
+                        <input type="text" name="productNumber" class="form-control" id="product-number"
+                            placeholder="Product Number" pattern="[A-Z][a-z]{2,}" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="product-name" class="form-label">Product Name</label>
+                        <input type="text" name="productName" class="form-control" id="product-name"
+                            placeholder="Product Name" pattern="[A-Z][a-z]{2,}" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="unit-price" class="form-label">Unit Price</label>
+                        <input type="number" name="unitPrice" class="form-control" id="unit-price"
+                            placeholder="Unit Price" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="quantity" class="form-label">Quantity In Stock</label>
+                        <input type="number" name="quantity" class="form-control" id="quantity"
+                            placeholder="Quantity In Stock" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="supplier" class="form-label">Supplier</label>
+                        <select name="supplier" class="form-select" id="supplier" required>
+                            <option value="">Select Supplier</option>
+                            <option value="1">Supplier 1</option>
+                            <option value="2">Supplier 2</option>
+                            <option value="3">Supplier 3</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="date-supplied" class="form-label">Date Supplied</label>
+                        <input type="date" name="dateSupplied" class="form-control" id="date-supplied"
+                            placeholder="Date Supplied" required>
+                        <div id="dateSuppliedHelp" class="form-text">Enter valid date</div>
+                    </div>
+                </div>
+            </div>
+            <row>
+                <div class="d-flex justify-content-end gap-3">
+
+                    <button type="submit" class="btn btn-outline-info">Cancel</button>
+                    <button type="reset" class="btn btn-outline-danger">Reset</button>
+                    <button type="submit" class="btn btn-outline-primary">Create Product</button>
+                </div>
+        </form>
+    </main>
+
+</body>
+
+</html>
