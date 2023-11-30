@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form 2 Lap</title>
     <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="../js/bootstrap.js"></script>
 </head>
 
 <body>
@@ -18,11 +19,11 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarColor01">
-                    <ul class="navbar-nav me-auto">
-                        <li class="nav-item border-start border-light border-2 ml-2">
+                    <ul class="navbar-nav me-auto mx-5">
+                        <li class="nav-item border-start border-light border-2 px-4">
                             <a class="nav-link" href="#">Product</a>
                         </li>
-                        <li class="nav-item border-start border-light border-2">
+                        <li class="nav-item border-start border-light border-2 px-4">
                             <a class="nav-link" href="#">Suppliers</a>
                         </li>
                     </ul>
@@ -42,12 +43,12 @@
                     <div class="mb-3">
                         <label for="product-number" class="form-label">Product Number</label>
                         <input type="text" name="productNumber" class="form-control" id="product-number"
-                            placeholder="Product Number" pattern="[A-Z][a-z]{2,}" required>
+                            placeholder="Product Number" required>
                     </div>
                     <div class="mb-3">
                         <label for="product-name" class="form-label">Product Name</label>
                         <input type="text" name="productName" class="form-control" id="product-name"
-                            placeholder="Product Name" pattern="[A-Z][a-z]{2,}" required>
+                            placeholder="Product Name" required>
                     </div>
                     <div class="mb-3">
                         <label for="unit-price" class="form-label">Unit Price</label>
@@ -80,9 +81,8 @@
             </div>
             <row>
                 <div class="d-flex justify-content-end gap-3">
-
-                    <button type="submit" class="btn btn-outline-info">Cancel</button>
-                    <button type="reset" class="btn btn-outline-danger">Reset</button>
+                    <button type="reset" class="btn btn-outline-info">Reset</button>
+                    <button class="btn btn-outline-danger">Cancel</button>
                     <button type="submit" class="btn btn-outline-primary">Create Product</button>
                 </div>
         </form>
