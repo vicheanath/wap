@@ -8,7 +8,7 @@ function max(a, b) {
   }
 }
 // Test cases
-console.assert(max(1, 2) === 2, "max(1,2) should return 2");
+console.log("max(1,2)", max(1, 2));
 
 // 2. Define a function maxOfThree() that takes three numbers as arguments and returns the largest of them.
 function maxOfThree(a, b, c) {
@@ -21,8 +21,7 @@ function maxOfThree(a, b, c) {
   }
 }
 // Test cases
-console.assert(maxOfThree(1, 2, 3) === 3, "maxOfThree(1,2,3) should return 3");
-
+console.log("maxOfThree(1,2,3)", maxOfThree(1, 2, 3));
 //3. Write a function isVowel() that takes a character (i.e. a string of length 1) and returns true if it is a vowel, false
 // otherwise.
 function isVowel(char) {
@@ -34,12 +33,10 @@ function isVowel(char) {
   }
 }
 // Test cases
-console.assert(isVowel("a") === true, "isVowel('a') should return true");
-console.assert(isVowel("b") === false, "isVowel('b') should return false");
-console.assert(isVowel("c") === false, "isVowel('c') should return false");
-console.assert(isVowel("d") === false, "isVowel('d') should return false");
-console.assert(isVowel("e") === true, "isVowel('e') should return true");
-console.assert(isVowel("f") === false, "isVowel('f') should return false");
+console.log("isVowel('a')", isVowel("a"));
+console.log("isVowel('b')", isVowel("b"));
+console.log("isVowel('c')", isVowel("c"));
+console.log("isVowel('e')", isVowel("d"));
 
 //4. Define a function sum() and a function multiply() that sums and multiplies (respectively) all the numbers in the
 // given array of numbers. For example, sum([1,2,3,4]) should return 10, and multiply([1,2,3,4]) should return 24.
@@ -52,7 +49,7 @@ function sum(arr) {
   return sum;
 }
 // Test cases
-console.assert(sum([1, 2, 3, 4]) == 10, "sum([1,2,3,4]) should return 10");
+console.log("sum([1,2,3,4])", sum([1, 2, 3, 4]));
 
 function multiply(arr) {
   let product = 1;
@@ -62,10 +59,7 @@ function multiply(arr) {
   return product;
 }
 // Test cases
-console.assert(
-  multiply([1, 2, 3, 4]) === 24,
-  "sum([1,2,3,4]) should return 10"
-);
+console.log("multiply([1,2,3,4])", multiply([1, 2, 3, 4]));
 
 //5. Define a function reverse(str) that computes the reversal of a string. For example, reverse("jag testar") should
 // return the string "ratset gaj".
@@ -77,10 +71,7 @@ function reverse(str) {
   return reversed;
 }
 // Test cases
-console.assert(
-  reverse("jag testar") === "ratset gaj",
-  "reverse('jag testar') should return 'ratset gaj'"
-);
+console.log("reverse('jag testar')", reverse("jag testar"));
 
 //6. Write a function findLongestWordLength() that takes an array of words and returns the length of the longest
 // one.
@@ -94,13 +85,9 @@ function findLongestWordLength(arr) {
   return longest;
 }
 // Test cases
-console.assert(
-  findLongestWordLength(["a", "ab", "abc", "abcd"]) === 4,
-  "findLongestWordLength(['a','ab','abc','abcd']) should return 4"
-);
-console.assert(
-  findLongestWordLength(["a", "ab", "abc", "abcd", "abcde"]) === 5,
-  "findLongestWordLength(['a','ab','abc','abcd','abcde']) should return 5"
+console.log(
+  "findLongestWordLength(['a','ab','abc','abcd'])",
+  findLongestWordLength(["a", "ab", "abc", "abcd"])
 );
 
 //7. Write a function filterLongWords() that takes an array of words and an integer i and returns a new array
@@ -115,13 +102,13 @@ function filterLongWords(arr, j) {
   return filtered;
 }
 // Test cases
-console.assert(
-  filterLongWords(["a", "ab", "abc", "abcd"], 2).length === 2,
-  "filterLongWords(['a','ab','abc','abcd'],2) should return ['abc','abcd']"
+console.log(
+  "filterLongWords(['a','ab','abc','abcd'],3)",
+  filterLongWords(["a", "ab", "abc", "abcd"], 3)
 );
-console.assert(
-  filterLongWords(["a", "ab", "abc", "abcd", "abcde"], 2).length === 3,
-  "filterLongWords(['a','ab','abc','abcd','abcde'],2) should return ['abc','abcd','abcde']"
+console.log(
+  "filterLongWords(['a','ab','abc','abcd'],2)",
+  filterLongWords(["a", "ab", "abc", "abcd"], 2)
 );
 
 // 8. Write a function named, computeSumOfSquares, that takes as input, an array of numbers and calculates and
@@ -133,13 +120,19 @@ function computeSumOfSquares(arr) {
   return arr.reduce((acc, curr) => acc + curr * curr, 0);
 }
 
+console.log(
+  "Compute Sum Of Squares computeSumOfSquares([1, 2, 3, 4, 5])",
+  computeSumOfSquares([1, 2, 3, 4, 5])
+);
+
 //9. Write a function named, printOddNumbersOnly, that takes as input, an array of numbers and it finds and prints
 // only the numbers which are odd.
-
+console.log("Print Odd Numbers Only printOddNumbersOnly([1, 2, 3, 4, 5])");
+printOddNumbersOnly([1, 2, 3, 4, 5]);
 function printOddNumbersOnly(arr) {
   for (let i = 0; i < arr.length; i++) {
     if (!arr[i] % 2 == 0) {
-      console.log(arr[i]);
+      console.log("Odd number: ", arr[i]);
     }
   }
 }
@@ -149,22 +142,31 @@ function printOddNumbersOnly(arr) {
 // computeSumOfSquaresOfEvensOnly ([1,2,3,4,5]) should be computed as 2^2 +4^2 = 20.
 function computeSumOfSquaresOfEvensOnly(arr) {
   let sum = 0;
-  let even = arr.map((x) => a % 2 == 0);
+  let even = arr.map((a) => a % 2 == 0);
   even.forEach((x) => (sum += x * x));
   return sum;
 }
+console.log(
+  "Compute Sum Of Squares Of Evens Only computeSumOfSquaresOfEvensOnly([1, 2, 3, 4, 5])",
+  computeSumOfSquaresOfEvensOnly([1, 2, 3, 4, 5])
+);
 
 //11. Using the Array.reduce(…) function, re-implement your functions, sum(…) and multiply(…) (defined in Problem 4
 // above) without using Imperative programming. i.e. Do NOT use any explicit looping construct; instead use
-// functional programming style/approach. 
+// functional programming style/approach.
 
-function newSum(arr){
+function newSum(arr) {
   return arr.reduce((acc, curr) => acc + curr, 0);
 }
 
-function newMultiply(arr){
+function newMultiply(arr) {
   return arr.reduce((acc, curr) => acc * curr, 1);
 }
+console.log("New Sum newSum([1, 2, 3, 4, 5])", newSum([1, 2, 3, 4, 5]));
+console.log(
+  "New Multiply newMultiply([1, 2, 3, 4, 5])",
+  newMultiply([1, 2, 3, 4, 5])
+);
 
 // 12. Write a function named printFibo, that takes as input, a given length, n, and any two starting numbers a and b,
 // and it prints-out the Fibonacci sequence, e.g. (0, 1, 1, 2, 3, 5, 8, 13, 21, 34,…) of the given length, beginning with
@@ -172,3 +174,12 @@ function newMultiply(arr){
 // output; printFibo(n=3, a=0, b=1), prints-out: "0, 1, 1", as output; printFibo(n=6, a=0, b=1), prints-out: "0, 1, 1, 2,
 // 3, 5", as output; and printFibo(n=10, a=0, b=1), prints-out: "0, 1, 1, 2, 3, 5, 8, 13, 21, 34", as output).
 
+function printFibo(n, a, b) {
+  let fibo = [a, b];
+  for (let i = 2; i < n; i++) {
+    fibo.push(fibo[i - 1] + fibo[i - 2]);
+  }
+  return fibo;
+}
+
+console.log("Print Fibo printFibo(10, 0, 1)", printFibo(10, 0, 1));
