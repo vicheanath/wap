@@ -142,7 +142,7 @@ function printOddNumbersOnly(arr) {
 // computeSumOfSquaresOfEvensOnly ([1,2,3,4,5]) should be computed as 2^2 +4^2 = 20.
 function computeSumOfSquaresOfEvensOnly(arr) {
   let sum = 0;
-  let even = arr.map((a) => a % 2 == 0);
+  let even = arr.filter(x => x % 2 == 0)
   even.forEach((x) => (sum += x * x));
   return sum;
 }
