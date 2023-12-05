@@ -1,0 +1,27 @@
+em#recent.awesome {
+    color: orange;
+}
+
+aside {
+    color: gray;
+}
+
+p {
+    color: green;
+}
+
+em {
+    color: yellow;
+}
+
+.awesome {
+    color: blue;
+}
+
+em.awesome {
+    color: red;
+}
+
+#recent {
+    color: black;
+}

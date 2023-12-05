@@ -1,0 +1,13 @@
+body {
+    font-family: Arial;
+    border: 1px dashed black;
+}
+
+div {
+    font-size: 35px;
+    color: red
+}
+
+p {
+    color: blue
+}

@@ -1,0 +1,74 @@
+/* h1 {
+    color: green;
+
+}
+
+p {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: white;
+    background-color: blue;
+} */
+
+/* h1 {
+    color: red;
+    font-family: Ariel, "Courier New", serif;
+    font-size: 35px;
+    font-style: italic;
+
+}
+
+h2 {
+    color: rgb(128, 0, 196);
+
+}
+
+h3 {
+    color: rgba(128, 0, 196, 0.5);
+}
+
+h4 {
+    color: #FF8800;
+}
+
+h5 {
+    color: #F80;
+}
+
+h6 {
+    color: hsla(120, 60%, 70%, 0.3);
+} */
+
+/* p {
+    font-size: 2em;
+}
+
+span {
+    font-size: 30pt;
+    font-weight: 0pt;
+} */
+/* 
+div {
+    width: 200px;
+    height: 200px;
+    border: 1px solid red;
+}
+
+p {
+    width: 2vw;
+    height: 2vw;
+    border: 1px solid blue;
+}
+
+body {
+    background-image: url("/img/smile.png");
+    background-repeat: repeat-x;
+    background-position: 370px 20px;
+} */
+
+ul {
+    list-style-type: circle;
+}
+
+ol {
+    list-style-type: lower-alpha;
+}

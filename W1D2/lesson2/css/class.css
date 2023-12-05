@@ -1,0 +1,46 @@
+/* .main {
+    color: red
+}
+
+#special {
+    color: blue
+}
+
+
+p {
+    color: purple
+} */
+
+
+/* .main {
+    color: red
+}
+
+#special {
+    color: red
+}
+
+
+p {
+    color: red
+}
+
+h1 {
+    color: red
+} */
+/* 
+.main,
+#special,
+p,
+h1 {
+    color: red;
+} */
+
+
+div {
+    color: blue;
+}
+
+div {
+    color: red
+}

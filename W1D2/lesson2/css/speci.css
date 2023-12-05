@@ -1,0 +1,34 @@
+/* .special {
+    color: blue;
+}
+
+#mainId {
+    color: green
+}
+
+p {
+    color: red
+} */
+
+#mission {
+    font-style: italic;
+    color: #000000;
+}
+
+.shout {
+    /* only p elements with class="shout" */
+    color: red;
+    font-family: cursive;
+    background-color: green;
+}
+
+.special {
+    /* any element with class="special" */
+    background-color: yellow;
+    font-weight: bold;
+}
+
+.special.shout {
+    background-color: blue;
+    color: white
+}

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        label[for="studentId"] {
+            background-color: dodgerblue;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+
+
+
+        </nav>
+    </header>
+    <main>
+        <h1>Example HTML Form</h1>
+        <form method="get" action="formprocessor.html">
+            <fieldset>
+                <legend>Student Information</legend>
+                <div>
+                    <input type="hidden" name="data_id" value="12">
+                </div>
+                <div>
+                    <label for="studentId">Student ID</label>
+                </div>
+                <div>
+                    <input autofocus="autofocus" name="studentId" id="studentId" pattern="000-\d{2}-\d{4}" type="text"
+                        required size="45" maxlength="11" placeholder="Enter format 000-xx-xxxx">
+                </div>
+                <div>
+                    <label for="fullname1">Full Name</label>
+                </div>
+                <div>
+                    <input name="fullname" id="fullname1" type="text" required value="Jim Brown">
+                </div>
+                <div>
+                    <label for="phoneno">Phone number</label>
+                </div>
+                <div>
+                    <input name="phoneno" id="phoneno" type="tel" title="Must be in format (xxx)-xxx-xxxx only"
+                        placeholder="(xxx)-xxx-xxxx" required>
+                </div>
+                <div>
+                    <label for="dateOfAdmission">Date of Admission</label>
+                </div>
+                <div>
+                    <input name="dateOfAdmission" id="dateOfAdmission" type="date" required>
+                </div>
+
+                <div>
+                    <label for="desc">About me</label>
+                </div>
+                <div>
+                    <textarea name="desc" id="desc" required cols="50" rows="15"></textarea>
+                </div>
+
+            </fieldset>
+            <fieldset>
+                <legend>Course Selection</legend>
+                <div>
+                    <label for="favcourses1">
+                        <input type="checkbox" name="favcourses1" id="favcourses1" checked>Course 1
+                    </label>
+                </div>
+                <div>
+                    <label for="favcourses2">
+                        <input type="checkbox" name="favcourses2" id="favcourses2">Course 2
+                    </label>
+                </div>
+                <div>
+                    <label for="favcourses3">
+                        <input type="checkbox" name="favcourses3" id="favcourses3">Course 3
+                    </label>
+                </div>
+                <div>
+                    Level of study:
+                </div>
+                <div>
+                    <label for="levelstudy1">
+                        <input type="radio" name="levelstudy" id="levelstudy1" value="grad">Graduate
+                    </label>
+                </div>
+                <div>
+                    <label for="levelstudy2">
+                        <input type="radio" name="levelstudy" id="levelstudy2" value="undergrad">Undergrad
+                    </label>
+                </div>
+                <div>
+                    <label for="semester">Semester</label>
+                </div>
+                <div>
+                    <select name="semester" id="semester" size="1">
+                        <optgroup label="First">
+                            <option value="spring">Spring</option>
+                            <option value="summer">Summer</option>
+                        </optgroup>
+                        <optgroup label="Second">
+                            <option selected value="fall">Fall</option>
+                            <option value="winter">Winter</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div>
+                    <div>
+                        <label for="txtNumCourse">
+                            Number of course:
+                        </label>
+                    </div>
+                    <div>
+                        <input type="number" name="txtNumCourse" id="txtNumCourse" min=" 1" max="10" step="2">
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <label for="txtCGPA">
+                            CGPA:
+                        </label>
+                    </div>
+                    <div>
+                        <input type="number" name="txtCGPA" id="txtCGPA" step="0.01" placeholder="x.xx" maxlength="4">
+                    </div>
+
+                    <div>
+                        <input type="color" name="colorE" id="colorE">
+                    </div>
+
+                </div>
+            </fieldset>
+            <button>SubmitButton</button>
+            <input type="submit" value="Save">
+
+            <input type="button" value="Button">
+            <input type="reset" value="Reset">
+        </form>
+
+    </main>
+</body>
+
+</html>
