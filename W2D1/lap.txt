@@ -1,0 +1,134 @@
+1. Code snippets 1
+
+Output:
+undefined
+8
+8
+9
+10
+1
+
+Draw the lexical environment diagram:
+1. Global EC creation:
+LE:{ 
+    x:undefined,
+    a:undefined,
+    b:undefined,
+    c:undefined,
+    outer:null
+    }, TDZ{}
+
+2.Global EC execution:
+LE:{
+    x:1,
+    a:5,
+    b:10,
+    c:fn(),
+    outer:null
+    }, TDZ{}
+3.C FEC creation:
+LE:{ 
+    arguments: { 0: 8, 1: 9, 2: 10, length: 3 },
+    a:8,
+    b:9,
+    c:10,
+    x:undefined,
+    f:undefined,
+    outer:Global
+    }, TDZ{}
+4.C FEC execution:
+LE:{ 
+    arguments: { 0: 8, 1: 9, 2: 10, length: 3 },
+    a:8,
+    b:9,
+    c:10,
+    x:10,
+    f:fn(),
+    outer:Global
+    }, TDZ{}
+
+5. F FEC Creation:
+LE:{ 
+    arguments: { 0: 8, 1: 9, 2: 10, length: 3 }
+    a:8,
+    b:9,
+    c:10,
+    x:undefined,
+    outer:Global
+    }, TDZ{}
+6. F FEC Execution:
+LE:{ 
+    arguments: { 0: 8, 1: 9, 2: 10, length: 3 }
+    a:8,
+    b:10,
+    c:10,
+    x:10,
+    outer:Global
+    }, TDZ{}
+
+2. Code snippets 2
+
+Output:
+81
+25
+
+Draw the lexical environment diagram:
+1. Global EC creation:
+LE:{ 
+    x:undefined,
+    myFunction:fn(),
+    outer:null
+    }, TDZ{}
+
+2.Global EC execution:
+LE:{
+    x:9,
+    myFunction:fn(),
+    outer:null
+    }, TDZ{}
+
+3. myFunction FEC Creation:
+LE:{ 
+    arguments: { length: 0 },
+    outer:Global
+    }, TDZ{}
+
+4. myFunction FEC Execution:
+LE:{ 
+    arguments: { length: 0 },
+    outer:Global
+    }, TDZ{}
+
+3. Code snippets 2
+
+Output:
+10
+
+Draw the lexical environment diagram:
+1. Global EC creation:
+LE:{ 
+    foo:undefined,
+    bar:fn(),
+    outer:null
+    }, TDZ{}
+
+2.Global EC execution:
+LE:{
+    foo:1,
+    bar:fn(),
+    outer:null
+    }, TDZ{}
+
+3. bar FEC Creation:
+LE:{ 
+    arguments: { length: 0 }
+    foo:undefined,
+    outer:Global
+    }, TDZ{}
+
+4. bar FEC Execution:
+LE:{ 
+    arguments: { length: 0 }
+    foo:10,
+    outer:Global
+    }, TDZ{}
