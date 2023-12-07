@@ -18,9 +18,14 @@ let user = {
 
 // askPassword(user.loginOk, user.loginFail); this is not working
 
-// askPassword(user.loginOk.bind(user), user.loginFail.bind(user)); // this is ok
-// askPassword(user.loginOk.call(user), user.loginFail.call(user));  // this is ok
-// askPassword(user.loginOk.apply(user), user.loginFail.apply(user));  // this is ok
+// Using bind
+// askPassword(user.loginOk.bind(user), user.loginFail.bind(user));  //Ok
+
+// Using call
+// askPassword(() => user.loginOk.call(user), () => user.loginFail.call(user)); // Ok
+
+// Using apply
+// askPassword(() => user.loginOk.apply(user), () => user.loginFail.apply(user)); // Ok
 
 // using wrapper
 askPassword(
