@@ -13,11 +13,7 @@ const student = {
     this.grades.push(newGrade);
   },
   computeAverageGrade: function () {
-    let sum = 0;
-    for (let grade of this.grades) {
-      sum += grade;
-    }
-    return sum / this.grades.length;
+    return this.grades.reduce((acc, curr) => acc + curr) / this.grades.length;
   },
 };
 
@@ -33,11 +29,7 @@ student2.insertGrade = function (newGrade) {
 };
 
 student2.computeAverageGrade = function () {
-  let sum = 0;
-  for (let grade of this.grades) {
-    sum += grade;
-  }
-  return sum / this.grades.length;
+  return this.grades.reduce((acc, curr) => acc + curr) / this.grades.length;
 };
 
 //Question 3: Add a new method named mySort() without parameters in the built-in constructor function
