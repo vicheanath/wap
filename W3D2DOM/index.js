@@ -3,7 +3,7 @@ let text = document.createTextNode("it is P tag")
 // create p node element
 let p = document.createElement('p')
 // set attribute id=myID to p element
-p.setAttribute('id',"myID")
+p.setAttribute('id',"myPID")
 // appendChild to p as text
 p.appendChild(text)
 // create div element 
