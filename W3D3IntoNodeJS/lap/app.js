@@ -10,25 +10,25 @@ let fs = require("fs");
 let server = http.createServer((req, res) => {
   switch (req.url) {
     case "/image":
-      res.writeHead(200, { "Content-Type": "image/jpg" });
+      res.setHeader("Content-Type", "image/jpeg")
       fs.readFile("./image.jpg", (err, data) => {
         if (err) throw err;
         res.end(data);
       });
       break;
     case "/pdf":
-      res.writeHead(200, { "Content-Type": "application/pdf" });
+        res.setHeader("Content-Type", "application/pdf")
       fs.readFile("./pdf.pdf", (err, data) => {
         if (err) throw err;
         res.end(data);
       });
       break;
     case "/home":
-      res.writeHead(200, { "Content-Type": "text/html" });
+      res.setHeader("Content-Type", "text/html");
       res.end("Welcome to my website");
       break;
     default:
-      res.writeHead(404, { "Content-Type": "text/html" });
+      res.setHeader("Content-Type", "text/html");
       res.end("404 Not Found");
   }
 });
