@@ -21,13 +21,10 @@ class Patient {
   getDob() {
     return `${this.dob.getFullYear()}-${this.dob.getMonth()}-${this.dob.getDate()}`;
   }
-
-  outPatient() {
-    return this.isOutPatient ? "Yes" : "No";
-  }
 }
 
 class PatientList {
+  static AGE_OLDER = 65;
   constructor() {
     this.patients = [];
   }
@@ -42,7 +39,8 @@ class PatientList {
     let lastName = document.getElementById("lastName").value;
     let dob = document.getElementById("dateOfBirth").value;
     let department = document.getElementById("ddlDepartment").value;
-    let isOutPatient = document.getElementsByName("radioIsOutPatient").value;
+    let isOutPatientNo = document.getElementById("radioIsOutPatientNo");
+    let isOutPatient = isOutPatientNo.checked ? "No" : "Yes";
     let patient = new Patient(
       id,
       firstName,
@@ -54,6 +52,20 @@ class PatientList {
     );
     patientList.addPatient(patient);
     patientList.displayPatients();
+    patientList.showMessageBox("Patient added successfully");
+  }
+
+  showMessageBox(message = "Message", type = "success", timeout = 3000) {
+    // prepend success message to the form
+    let successMsg = document.createElement("div");
+    successMsg.className = `alert alert-${type}`;
+    successMsg.innerHTML = message;
+    let form = document.getElementById("patientForm");
+    form.prepend(successMsg);
+    // remove the success message after 3 seconds
+    setTimeout(function () {
+      successMsg.remove();
+    }, timeout);
   }
 
   displayPatients(patients = this.patients) {
@@ -67,24 +79,54 @@ class PatientList {
       row.insertCell().innerHTML = patient.lastName;
       row.insertCell().innerHTML = patient.getDob();
       row.insertCell().innerHTML = patient.department;
-      row.insertCell().innerHTML = patient.outPatient();
+      row.insertCell().innerHTML = patient.isOutPatient;
     }
   }
 
   displayElderlyPatients() {
     let elderlyPatients = this.patients.filter(function (patient) {
-      return patient.dob.getFullYear() < 1950;
+      return (
+        new Date().getFullYear() - patient.dob.getFullYear() >
+        PatientList.AGE_OLDER
+      );
     });
     this.displayPatients(elderlyPatients);
   }
 
   displayOutPatients() {
     let outPatients = this.patients.filter(function (patient) {
-      return patient.isOutPatient;
+      return patient.isOutPatient === "Yes";
     });
     this.displayPatients(outPatients);
   }
 }
+
+/*
+Patient 1:
+    Patient ID Number: EP-001-000001,
+    First Name: Ana,
+    Middle Initial(s): J,
+    Last Name: Smith,
+    Date of birth: 5 January 1945
+    Department: Ear, Nose and Throat,
+    Is out-patient?: No
+Patient 2:
+    Patient ID Number: P-001-000002,
+    First Name: Bob,
+    Middle Initial(s): K,
+    Last Name: Jones,
+    Date of birth: 4 May 1985
+    Department: Cardiology,
+    Is out-patient: Yes
+Patient 3:
+    Patient ID Number: EP-001-000003,
+    First Name: Carlos,
+    Middle Initial(s): A,
+    Last Name: Hernandez,
+    Date of birth: 13 March 1957
+    Department: Cardiology,
+    Is out-patient: Yes
+*/
 
 let patientList = new PatientList();
 let patient1 = new Patient(
@@ -94,7 +136,7 @@ let patient1 = new Patient(
   "Smith",
   new Date("5 January 1945"),
   "Ear, Nose and Throat",
-  false
+  "No"
 );
 let patient2 = new Patient(
   "P-001-000002",
@@ -103,7 +145,7 @@ let patient2 = new Patient(
   "Jones",
   new Date("4 May 1985"),
   "Cardiology",
-  true
+  "Yes"
 );
 let patient3 = new Patient(
   "EP-001-000003",
@@ -112,35 +154,29 @@ let patient3 = new Patient(
   "Hernandez",
   new Date("13 March 1957"),
   "Cardiology",
-  true
+  "Yes"
 );
 patientList.addPatient(patient1);
 patientList.addPatient(patient2);
 patientList.addPatient(patient3);
 patientList.displayPatients();
 
-let btnRegisterPatient = document.getElementById("btnRegisterPatient");
-btnRegisterPatient.addEventListener("submit", function (event) {
+document.getElementById("patientForm").onsubmit = function (event) {
   event.preventDefault();
   patientList.addPatientFromForm();
-});
+  this.reset();
+};
 
 document
   .getElementById("chkElderlyPatients")
   .addEventListener("change", function () {
-    if (this.checked) {
-      patientList.displayElderlyPatients();
-    } else {
-      patientList.displayOutPatients();
-    }
+    if (this.checked) patientList.displayElderlyPatients();
+    else patientList.displayPatients();
   });
 
 document
   .getElementById("chkShowOutPatients")
   .addEventListener("change", function () {
-    if (this.checked) {
-      patientList.displayOutPatients();
-    } else {
-      patientList.displayPatients();
-    }
+    if (this.checked) patientList.displayOutPatients();
+    else patientList.displayPatients();
   });
