@@ -1,8 +1,10 @@
 let express = require("express")
 let studentRouter = require("./router/studentRouter");
 let app = express();
+let cors = require("cors")
 
 app.use(express.json())
+app.use(cors())
 
 app.use("/students", studentRouter)
 

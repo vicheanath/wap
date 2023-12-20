@@ -31,9 +31,9 @@ let controller = {
         else res.status(404).json({ message: "already registered.." })
     },
     updateStudentById: function (req, res, next) {
-        let id = req.params.id;
-        let { name, program } = req.body;
-        let student = Student.updateStudentById(id, name, program);
+        let idForUpdate = req.params.id;
+        let { name, program, id } = req.body;
+        let student = Student.updateStudentById(idForUpdate,id, name, program);
         if (student) res.status(200).json(student)
         else
             res.status(404).json({ message: "not found" })

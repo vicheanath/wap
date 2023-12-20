@@ -27,18 +27,21 @@ class Student {
     if (index !== -1) return db.splice(index, 1);
   }
 
-  static updateStudentById(id, name, program) {
-    let index = db.findIndex((s) => s.id == id);
+  static updateStudentById(idForUpdate, id, name, program) {
+    let index = db.findIndex((s) => s.id == idForUpdate);
     if (index !== -1) {
       db[index].name = name;
       db[index].program = program;
+      db[index].id = id;
       return db[index];
     }
   }
   // search by program or name or both
   static search(program, name) {
     if (program && name) {
-      return db.filter((s) => s.program.includes(program) && s.name.includes(name));
+      return db.filter(
+        (s) => s.program.includes(program) && s.name.includes(name)
+      );
     } else if (program) {
       return db.filter((s) => s.program.includes(program));
     } else if (name) {
